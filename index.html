@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="task-app">
+    <header>
+      <h2>Task Manager</h2>
+    </header>
+    <div class="task-input-section">
+      <input id="new-task" type="text" placeholder="Add new task here...">
+      <button id="add-task-btn">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <div class="task-controls">
+      <button class="control-btn" data-state="all">All</button>
+      <button class="control-btn" data-state="pending">Pending</button>
+      <button class="control-btn" data-state="completed">Completed</button>
+    </div>
+    <ul id="task-list"></ul>
+    <button id="clear-tasks-btn">Clear All Tasks</button>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
