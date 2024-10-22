@@ -30,12 +30,14 @@ function renderTasks() {
 }
 
 function addTask() {
-  const taskName = taskInput.value.trim();
+  const taskName = taskInput.value.trim(); // Ensure there's no extra space
   if (taskName) {
     tasks.push({ name: taskName, status: 'pending' });
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    taskInput.value = '';
-    renderTasks();
+    taskInput.value = ''; // Clear the input field
+    renderTasks(); // Re-render the task list
+  } else {
+    alert("Task cannot be empty!"); // Alert if the task input is empty
   }
 }
 
@@ -57,12 +59,14 @@ function clearTasks() {
   renderTasks();
 }
 
-addTaskBtn.addEventListener('click', addTask);
+// Event listeners
+addTaskBtn.addEventListener('click', addTask); // Add task on button click
+
 taskInput.addEventListener('keyup', e => {
-  if (e.key === 'Enter') addTask();
+  if (e.key === 'Enter') addTask(); // Add task on pressing Enter key
 });
 
-clearTasksBtn.addEventListener('click', clearTasks);
+clearTasksBtn.addEventListener('click', clearTasks); // Clear all tasks
 
 filterButtons.forEach(btn => {
   btn.addEventListener('click', e => {
